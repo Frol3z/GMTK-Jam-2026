@@ -1,5 +1,24 @@
 [gd_scene format=3 uid="uid://b5wx8aqnxxmqm"]
 
+[ext_resource type="Script" uid="uid://cb2dccv3ssuwr" path="res://script/main.gd" id="1_ig7tw"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ptery"]
+
 [node name="Main" type="Node3D" unique_id=590011488]
+script = ExtResource("1_ig7tw")
 
 [node name="Camera" type="Camera3D" parent="." unique_id=1243448202]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+fov = 70.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1546623468]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -0.67522526, 0)
+mesh = SubResource("BoxMesh_ptery")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=756473691]
+transform = Transform3D(0.49999997, 0, 0.86602545, 0, 1, 0, -0.86602545, 0, 0.49999997, 0, -0.67522526, 0)
+mesh = SubResource("BoxMesh_ptery")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1766439595]
+transform = Transform3D(-0.5000001, 0, 0.8660254, 0, 1, 0, -0.8660254, 0, -0.5000001, -0.5701883, 0.32477474, 0)
+mesh = SubResource("BoxMesh_ptery")
