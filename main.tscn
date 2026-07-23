@@ -67,6 +67,7 @@ shadow_blur = 0.9
 [node name="AreaLight3D4" type="AreaLight3D" parent="." unique_id=459476846]
 transform = Transform3D(-0.99941087, 3.0004619e-09, 0.034321286, 0, -1, 8.7422784e-08, 0.034321282, 8.7371276e-08, 0.99941087, -1.4036921, -0.6006417, 2.7788053)
 light_color = Color(0.76929384, 0.33322236, 0.294594, 1)
+light_energy = 3.0
 light_indirect_energy = 2.901
 light_volumetric_fog_energy = 1.743
 light_specular = 3.217
