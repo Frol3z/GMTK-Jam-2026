@@ -1,3 +1,14 @@
 [gd_scene format=3 uid="uid://12s7d25de3u2"]
 
-[node name="Health" type="Node2D" unique_id=903958922]
+[ext_resource type="Texture2D" uid="uid://df7isybyfgc17" path="res://assets/cockpit_bocchi-the-rock@2000x1270.jpg" id="1_h5ing"]
+
+[node name="Health" type="Node2D" unique_id=1965991597]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=349258008]
+offset_right = 300.0
+offset_bottom = 400.0
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=405065985]
+position = Vector2(149.90552, 200)
+scale = Vector2(0.1500945, 0.31811023)
+texture = ExtResource("1_h5ing")

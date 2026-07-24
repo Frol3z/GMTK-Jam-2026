@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://baqxrppthr3wr"]
+
+[ext_resource type="Texture2D" uid="uid://df7isybyfgc17" path="res://assets/cockpit_bocchi-the-rock@2000x1270.jpg" id="1_so6yc"]
+
+[node name="Cooldown" type="Node2D" unique_id=1965991597]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=349258008]
+offset_right = 400.0
+offset_bottom = 900.0
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=405065985]
+position = Vector2(199.90552, 450.00003)
+scale = Vector2(0.2000945, 0.71181107)
+texture = ExtResource("1_so6yc")

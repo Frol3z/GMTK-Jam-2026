@@ -1,0 +1,236 @@
+[gd_scene format=3 uid="uid://ddqb5y2gufesv"]
+
+[ext_resource type="PackedScene" uid="uid://cq87gt4fnt3qk" path="res://assets/cockpit.glb" id="1_mlplb"]
+[ext_resource type="PackedScene" uid="uid://dhf84gl2cbv0l" path="res://scenes/screens/grid.tscn" id="2_mlplb"]
+[ext_resource type="PackedScene" uid="uid://1qb7yoegl480" path="res://scenes/screens/terminal.tscn" id="2_s8r4p"]
+[ext_resource type="PackedScene" uid="uid://bgbxewq6dvb5n" path="res://scenes/screens/energy.tscn" id="2_shtuo"]
+[ext_resource type="Shader" uid="uid://kq17q4kdke26" path="res://shaders/crt.gdshader" id="3_s8r4p"]
+[ext_resource type="PackedScene" uid="uid://bivevv8ex3kwj" path="res://scenes/screens/enemy_info.tscn" id="4_3b1jk"]
+[ext_resource type="PackedScene" uid="uid://baqxrppthr3wr" path="res://scenes/screens/cooldown.tscn" id="4_c1ege"]
+[ext_resource type="PackedScene" uid="uid://12s7d25de3u2" path="res://scenes/screens/health.tscn" id="7_bjct7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h4pee"]
+resource_name = "RedMetal"
+cull_mode = 2
+albedo_color = Color(0.9063355, 0, 0.0317121, 1)
+metallic = 0.72307694
+roughness = 0.36153847
+emission_enabled = true
+emission = Color(0.90588236, 0, 0, 1)
+emission_energy_multiplier = 9.44
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_bjct7"]
+viewport_path = NodePath("BatteryScreen/SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_iw1fk"]
+viewport_path = NodePath("BatteryScreen/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_edtdw"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_bjct7")
+emission_enabled = true
+emission_texture = SubResource("ViewportTexture_iw1fk")
+uv1_scale = Vector3(1.225, 1, 1)
+uv1_offset = Vector3(-0.085, 0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mlplb"]
+shader = ExtResource("3_s8r4p")
+shader_parameter/mask_type = 1
+shader_parameter/curve = 0.0
+shader_parameter/color_offset = 0.0
+shader_parameter/mask_brightness = 1.0
+shader_parameter/aspect = 0.75
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_h4pee"]
+viewport_path = NodePath("CockpitScreen/SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_4gff3"]
+viewport_path = NodePath("CockpitScreen/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0lu0o"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_h4pee")
+emission_enabled = true
+emission_texture = SubResource("ViewportTexture_4gff3")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_m5vvm"]
+viewport_path = NodePath("CooldownScreen/SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_7nj66"]
+viewport_path = NodePath("CooldownScreen/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6tcqw"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_m5vvm")
+emission_enabled = true
+emission_texture = SubResource("ViewportTexture_7nj66")
+uv1_scale = Vector3(3.265, 1, 1)
+uv1_offset = Vector3(0.02, 0, 0)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_0g4l1"]
+viewport_path = NodePath("EnemyScreen/SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ifc1d"]
+viewport_path = NodePath("EnemyScreen/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iuvpg"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_0g4l1")
+emission_enabled = true
+emission_texture = SubResource("ViewportTexture_ifc1d")
+uv1_scale = Vector3(1.55, 1, 1)
+uv1_offset = Vector3(-0.265, 0, 0)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_n6o77"]
+viewport_path = NodePath("HealthScreen/SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_rmof7"]
+viewport_path = NodePath("HealthScreen/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oopws"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_n6o77")
+emission_enabled = true
+emission_texture = SubResource("ViewportTexture_rmof7")
+uv1_scale = Vector3(1.91, 1, 1)
+uv1_offset = Vector3(-0.42, 0, 0)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_vsd1e"]
+viewport_path = NodePath("LogScreen/SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_5xfqw"]
+viewport_path = NodePath("LogScreen/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sxk48"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_vsd1e")
+metallic_specular = 0.0
+emission_enabled = true
+emission_texture = SubResource("ViewportTexture_5xfqw")
+backlight = Color(1, 1, 1, 1)
+uv1_scale = Vector3(1.165, 1, 1)
+uv1_offset = Vector3(-0.1, 0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bjct7"]
+resource_name = "GreenPlastic"
+cull_mode = 2
+albedo_color = Color(0.3404492, 0.9063355, 0.2956959, 1)
+roughness = 0.5
+emission_enabled = true
+emission = Color(0.09449999, 0.45, 0.10634999, 1)
+emission_energy_multiplier = 5.57
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iw1fk"]
+resource_name = "RedMetal"
+cull_mode = 2
+albedo_color = Color(0.9063355, 0, 0.0317121, 1)
+metallic = 0.72307694
+roughness = 0.36153847
+emission_enabled = true
+emission = Color(0.90588236, 0, 0, 1)
+emission_energy_multiplier = 4.34
+
+[node name="cockpit" unique_id=699117843 instance=ExtResource("1_mlplb")]
+
+[node name="Alarm" parent="." index="0" unique_id=319437574]
+surface_material_override/1 = SubResource("StandardMaterial3D_h4pee")
+
+[node name="BatteryScreen" parent="." index="2" unique_id=45063497]
+surface_material_override/0 = SubResource("StandardMaterial3D_edtdw")
+
+[node name="SubViewport" type="SubViewport" parent="BatteryScreen" index="0" unique_id=835379386]
+size = Vector2i(500, 400)
+
+[node name="Energy" parent="BatteryScreen/SubViewport" index="0" unique_id=1965991597 instance=ExtResource("2_shtuo")]
+
+[node name="ColorRect" type="ColorRect" parent="BatteryScreen/SubViewport" index="1" unique_id=1685923001]
+material = SubResource("ShaderMaterial_mlplb")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CockpitScreen" parent="." index="10" unique_id=372231722]
+surface_material_override/0 = SubResource("StandardMaterial3D_0lu0o")
+
+[node name="SubViewport" type="SubViewport" parent="CockpitScreen" index="0" unique_id=8296361]
+size = Vector2i(800, 600)
+
+[node name="Grid" parent="CockpitScreen/SubViewport" index="0" unique_id=969030425 instance=ExtResource("2_mlplb")]
+
+[node name="ColorRect" type="ColorRect" parent="CockpitScreen/SubViewport" index="1" unique_id=1787595737]
+material = SubResource("ShaderMaterial_mlplb")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CooldownScreen" parent="." index="12" unique_id=1004025114]
+surface_material_override/0 = SubResource("StandardMaterial3D_6tcqw")
+
+[node name="SubViewport" type="SubViewport" parent="CooldownScreen" index="0" unique_id=510815259]
+size = Vector2i(400, 900)
+
+[node name="Cooldown" parent="CooldownScreen/SubViewport" index="0" unique_id=1023691348 instance=ExtResource("4_c1ege")]
+
+[node name="ColorRect" type="ColorRect" parent="CooldownScreen/SubViewport" index="1" unique_id=514671250]
+material = SubResource("ShaderMaterial_mlplb")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="EnemyScreen" parent="." index="14" unique_id=205011034]
+surface_material_override/0 = SubResource("StandardMaterial3D_iuvpg")
+
+[node name="SubViewport" type="SubViewport" parent="EnemyScreen" index="0" unique_id=201097783]
+size = Vector2i(200, 200)
+
+[node name="EnemyInfo" parent="EnemyScreen/SubViewport" index="0" unique_id=2077214754 instance=ExtResource("4_3b1jk")]
+
+[node name="ColorRect" type="ColorRect" parent="EnemyScreen/SubViewport" index="1" unique_id=37734087]
+material = SubResource("ShaderMaterial_mlplb")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HealthScreen" parent="." index="16" unique_id=1516494536]
+surface_material_override/0 = SubResource("StandardMaterial3D_oopws")
+
+[node name="SubViewport" type="SubViewport" parent="HealthScreen" index="0" unique_id=396931169]
+size = Vector2i(300, 400)
+
+[node name="Health" parent="HealthScreen/SubViewport" index="0" unique_id=1562592305 instance=ExtResource("7_bjct7")]
+
+[node name="ColorRect" type="ColorRect" parent="HealthScreen/SubViewport" index="1" unique_id=519559529]
+material = SubResource("ShaderMaterial_mlplb")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LogScreen" parent="." index="18" unique_id=1293094236]
+surface_material_override/0 = SubResource("StandardMaterial3D_sxk48")
+
+[node name="SubViewport" type="SubViewport" parent="LogScreen" index="0" unique_id=97337978]
+size = Vector2i(600, 500)
+
+[node name="Terminal" parent="LogScreen/SubViewport" index="0" unique_id=234687491 instance=ExtResource("2_s8r4p")]
+
+[node name="ColorRect" type="ColorRect" parent="LogScreen/SubViewport" index="1" unique_id=521883127]
+material = SubResource("ShaderMaterial_mlplb")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StatusPanel" parent="." index="24" unique_id=593066322]
+surface_material_override/1 = SubResource("StandardMaterial3D_bjct7")
+surface_material_override/2 = SubResource("StandardMaterial3D_iw1fk")

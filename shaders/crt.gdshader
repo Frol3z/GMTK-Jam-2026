@@ -9,7 +9,7 @@ render_mode unshaded;
 	The input texture that will have the CRT effect applied to it.
 	This should be supplied by a subviewport texture rendered at a lower res.
 	*/
-uniform sampler2D tex: filter_linear;
+uniform sampler2D tex: hint_screen_texture, filter_linear;
 
 
 /**
