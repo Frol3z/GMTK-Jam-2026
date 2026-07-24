@@ -1,14 +1,72 @@
 [gd_scene format=3 uid="uid://12s7d25de3u2"]
 
-[ext_resource type="Texture2D" uid="uid://df7isybyfgc17" path="res://assets/cockpit_bocchi-the-rock@2000x1270.jpg" id="1_h5ing"]
+[ext_resource type="Script" uid="uid://cbxw0xf0vvf5u" path="res://script/health.gd" id="1_h5ing"]
+[ext_resource type="Texture2D" uid="uid://bqifjcajbcsv" path="res://assets/mecha_health/Sfondo.PNG" id="2_2gcyy"]
+[ext_resource type="Texture2D" uid="uid://bydmhx1cy7cdi" path="res://assets/mecha_health/Body.PNG" id="3_kqqqg"]
+[ext_resource type="Shader" uid="uid://clwbawao51d6j" path="res://shaders/health.gdshader" id="3_xx8d8"]
+[ext_resource type="Texture2D" uid="uid://xcl5c3ow5scr" path="res://assets/mecha_health/Head.PNG" id="4_xx8d8"]
+[ext_resource type="Texture2D" uid="uid://ba1l4pwiwih46" path="res://assets/mecha_health/Right Arm.PNG" id="5_fkxoq"]
+[ext_resource type="Texture2D" uid="uid://cfmcy03i5m8qb" path="res://assets/mecha_health/LeftArm.PNG" id="6_ttvtc"]
+[ext_resource type="Texture2D" uid="uid://b31hjwqlski1w" path="res://assets/mecha_health/RightLeg.PNG" id="7_3i31q"]
+[ext_resource type="Texture2D" uid="uid://bwmmawmjrqv2x" path="res://assets/mecha_health/LeftLeg.PNG" id="8_jq64x"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xx8d8"]
+shader = ExtResource("3_xx8d8")
+shader_parameter/amount = 99.9999977648
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fkxoq"]
+shader = ExtResource("3_xx8d8")
+shader_parameter/amount = 99.9999977648
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ttvtc"]
+shader = ExtResource("3_xx8d8")
+shader_parameter/amount = 99.9999977648
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3i31q"]
+shader = ExtResource("3_xx8d8")
+shader_parameter/amount = 99.9999977648
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jq64x"]
+shader = ExtResource("3_xx8d8")
+shader_parameter/amount = 99.9999977648
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k03if"]
+shader = ExtResource("3_xx8d8")
+shader_parameter/amount = 99.9999977648
 
 [node name="Health" type="Node2D" unique_id=1965991597]
+script = ExtResource("1_h5ing")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=349258008]
-offset_right = 300.0
-offset_bottom = 400.0
+[node name="Background" type="Sprite2D" parent="." unique_id=1269782212]
+position = Vector2(150, 200)
+texture = ExtResource("2_2gcyy")
 
-[node name="Sprite" type="Sprite2D" parent="." unique_id=405065985]
-position = Vector2(149.90552, 200)
-scale = Vector2(0.1500945, 0.31811023)
-texture = ExtResource("1_h5ing")
+[node name="Body" type="Sprite2D" parent="." unique_id=912475860]
+material = SubResource("ShaderMaterial_xx8d8")
+position = Vector2(155, 200)
+texture = ExtResource("3_kqqqg")
+
+[node name="Head" type="Sprite2D" parent="." unique_id=1306151056]
+material = SubResource("ShaderMaterial_fkxoq")
+position = Vector2(155, 200)
+texture = ExtResource("4_xx8d8")
+
+[node name="RightArm" type="Sprite2D" parent="." unique_id=1151957664]
+material = SubResource("ShaderMaterial_ttvtc")
+position = Vector2(155, 200)
+texture = ExtResource("5_fkxoq")
+
+[node name="LeftArm" type="Sprite2D" parent="." unique_id=1228673720]
+material = SubResource("ShaderMaterial_3i31q")
+position = Vector2(155, 200)
+texture = ExtResource("6_ttvtc")
+
+[node name="RightLeg" type="Sprite2D" parent="." unique_id=852705395]
+material = SubResource("ShaderMaterial_jq64x")
+position = Vector2(155, 200)
+texture = ExtResource("7_3i31q")
+
+[node name="LeftLeg" type="Sprite2D" parent="." unique_id=114359702]
+material = SubResource("ShaderMaterial_k03if")
+position = Vector2(155, 200)
+texture = ExtResource("8_jq64x")
