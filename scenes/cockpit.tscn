@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ddqb5y2gufesv"]
 
-[ext_resource type="PackedScene" uid="uid://cq87gt4fnt3qk" path="res://assets/cockpit.glb" id="1_mlplb"]
+[ext_resource type="PackedScene" uid="uid://b62fah02s1yx" path="res://assets/cockpit.glb" id="1_mlplb"]
 [ext_resource type="PackedScene" uid="uid://dhf84gl2cbv0l" path="res://scenes/screens/grid.tscn" id="2_mlplb"]
 [ext_resource type="PackedScene" uid="uid://1qb7yoegl480" path="res://scenes/screens/terminal.tscn" id="2_s8r4p"]
 [ext_resource type="PackedScene" uid="uid://bgbxewq6dvb5n" path="res://scenes/screens/energy.tscn" id="2_shtuo"]
@@ -132,10 +132,10 @@ emission_energy_multiplier = 4.34
 
 [node name="cockpit" unique_id=699117843 instance=ExtResource("1_mlplb")]
 
-[node name="Alarm" parent="." index="0" unique_id=319437574]
+[node name="Alarm" parent="." index="0" unique_id=809994605]
 surface_material_override/1 = SubResource("StandardMaterial3D_h4pee")
 
-[node name="BatteryScreen" parent="." index="2" unique_id=45063497]
+[node name="BatteryScreen" parent="." index="2" unique_id=71585927]
 surface_material_override/0 = SubResource("StandardMaterial3D_edtdw")
 
 [node name="SubViewport" type="SubViewport" parent="BatteryScreen" index="0" unique_id=835379386]
@@ -151,23 +151,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CockpitScreen" parent="." index="10" unique_id=372231722]
+[node name="CockpitScreen" parent="." index="10" unique_id=1563047588]
 surface_material_override/0 = SubResource("StandardMaterial3D_0lu0o")
 
 [node name="SubViewport" type="SubViewport" parent="CockpitScreen" index="0" unique_id=8296361]
-size = Vector2i(800, 600)
+size = Vector2i(290, 205)
 
 [node name="Grid" parent="CockpitScreen/SubViewport" index="0" unique_id=969030425 instance=ExtResource("2_mlplb")]
 
 [node name="ColorRect" type="ColorRect" parent="CockpitScreen/SubViewport" index="1" unique_id=1787595737]
 material = SubResource("ShaderMaterial_mlplb")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_right = 290.0
+offset_bottom = 205.0
 
-[node name="CooldownScreen" parent="." index="12" unique_id=1004025114]
+[node name="CooldownScreen" parent="." index="12" unique_id=554436999]
 surface_material_override/0 = SubResource("StandardMaterial3D_6tcqw")
 
 [node name="SubViewport" type="SubViewport" parent="CooldownScreen" index="0" unique_id=510815259]
@@ -183,7 +180,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="EnemyScreen" parent="." index="14" unique_id=205011034]
+[node name="EnemyScreen" parent="." index="14" unique_id=488899193]
 surface_material_override/0 = SubResource("StandardMaterial3D_iuvpg")
 
 [node name="SubViewport" type="SubViewport" parent="EnemyScreen" index="0" unique_id=201097783]
@@ -199,7 +196,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HealthScreen" parent="." index="16" unique_id=1516494536]
+[node name="HealthScreen" parent="." index="16" unique_id=1998894401]
 surface_material_override/0 = SubResource("StandardMaterial3D_oopws")
 
 [node name="SubViewport" type="SubViewport" parent="HealthScreen" index="0" unique_id=396931169]
@@ -215,7 +212,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="LogScreen" parent="." index="18" unique_id=1293094236]
+[node name="LogScreen" parent="." index="18" unique_id=1008690735]
 surface_material_override/0 = SubResource("StandardMaterial3D_sxk48")
 
 [node name="SubViewport" type="SubViewport" parent="LogScreen" index="0" unique_id=97337978]
@@ -231,6 +228,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="StatusPanel" parent="." index="24" unique_id=593066322]
+[node name="StatusPanel" parent="." index="24" unique_id=1917896217]
 surface_material_override/1 = SubResource("StandardMaterial3D_bjct7")
 surface_material_override/2 = SubResource("StandardMaterial3D_iw1fk")

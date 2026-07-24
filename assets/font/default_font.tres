@@ -1,0 +1,6 @@
+[gd_resource type="FontVariation" format=3 uid="uid://drwlhm4r2fudu"]
+
+[ext_resource type="FontFile" uid="uid://bn610yfo06ynv" path="res://assets/font/C&C Red Alert [INET].ttf" id="1_e1cax"]
+
+[resource]
+base_font = ExtResource("1_e1cax")

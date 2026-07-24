@@ -1,14 +1,13 @@
 [gd_scene format=3 uid="uid://dhf84gl2cbv0l"]
 
-[ext_resource type="Texture2D" uid="uid://df7isybyfgc17" path="res://assets/cockpit_bocchi-the-rock@2000x1270.jpg" id="1_65pwv"]
+[ext_resource type="Texture2D" uid="uid://dprog1tatd4e3" path="res://resources/grid/Grid.png" id="1_65pwv"]
 
 [node name="Grid" type="Node2D" unique_id=1965991597]
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=349258008]
-offset_right = 800.0
-offset_bottom = 600.0
+offset_right = 290.0
+offset_bottom = 205.0
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=405065985]
-position = Vector2(400.40552, 300.875)
-scale = Vector2(0.4005945, 0.4726378)
+position = Vector2(145, 102.5)
 texture = ExtResource("1_65pwv")

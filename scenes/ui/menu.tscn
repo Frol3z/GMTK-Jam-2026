@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ddo8qpbfbyouc"]
 
 [ext_resource type="Script" uid="uid://by8ldidgojc5e" path="res://script/menu.gd" id="1_yqeox"]
+[ext_resource type="Theme" uid="uid://bxkur1265eet8" path="res://assets/theme/default_theme.tres" id="2_wedc3"]
 
 [node name="Menu" type="Control" unique_id=363740173]
 layout_mode = 3
@@ -9,40 +10,86 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_wedc3")
 script = ExtResource("1_yqeox")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=846303929]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=680583109]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -65.0
-offset_top = -15.5
-offset_right = 65.0
-offset_bottom = 15.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0.20784314, 0.23921569, 0.27450982, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=712959806]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1550257383]
+layout_mode = 2
+
+[node name="Header" type="Label" parent="MarginContainer/VBoxContainer" unique_id=73838811]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "========================== TERMINAL OS v0.1.4 =========================="
+horizontal_alignment = 1
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer" unique_id=297746824]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "ESCPE FROM ZIGGERS"
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer" unique_id=934117551]
+custom_minimum_size = Vector2(0, 65)
+layout_mode = 2
+
+[node name="MenuButtons" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=846303929]
+layout_mode = 2
 alignment = 1
 
-[node name="PlayButton" type="Button" parent="VBoxContainer" unique_id=481120293]
+[node name="PlayButton" type="Button" parent="MarginContainer/VBoxContainer/MenuButtons" unique_id=481120293]
 layout_mode = 2
+theme_override_font_sizes/font_size = 60
 text = "Play"
+alignment = 0
 
-[node name="Settings" type="Button" parent="VBoxContainer" unique_id=1972205726]
+[node name="Settings" type="Button" parent="MarginContainer/VBoxContainer/MenuButtons" unique_id=1972205726]
 layout_mode = 2
+theme_override_font_sizes/font_size = 60
 text = "Settings"
+alignment = 0
 
-[node name="Credits" type="Button" parent="VBoxContainer" unique_id=1215255377]
+[node name="Credits" type="Button" parent="MarginContainer/VBoxContainer/MenuButtons" unique_id=1215255377]
 layout_mode = 2
+theme_override_font_sizes/font_size = 60
 text = "Credits"
+alignment = 0
 
-[node name="Exit" type="Button" parent="VBoxContainer" unique_id=637545144]
+[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer/MenuButtons" unique_id=637545144]
 layout_mode = 2
+theme_override_font_sizes/font_size = 60
 text = "Exit"
+alignment = 0
 
-[connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]
-[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[node name="Control2" type="Control" parent="MarginContainer/VBoxContainer" unique_id=2074256964]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Footer" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1377990442]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "(C) 2184-2188 ZURG CORP. ALL RIGHTS RESERVED."
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MenuButtons/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MenuButtons/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MenuButtons/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MenuButtons/Exit" to="." method="_on_exit_pressed"]
