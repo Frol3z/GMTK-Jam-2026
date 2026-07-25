@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://b5wx8aqnxxmqm"]
 
-[ext_resource type="Script" uid="uid://cb2dccv3ssuwr" path="res://script/main.gd" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://cb2dccv3ssuwr" path="res://scripts/main.gd" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://ddqb5y2gufesv" path="res://scenes/cockpit.tscn" id="2_h2yge"]
-[ext_resource type="Script" uid="uid://cduceatbwte1" path="res://script/camera.gd" id="3_h2yge"]
+[ext_resource type="Script" uid="uid://cduceatbwte1" path="res://scripts/camera.gd" id="3_h2yge"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0xm2m"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)

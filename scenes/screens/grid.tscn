@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dhf84gl2cbv0l"]
 
-[ext_resource type="Texture2D" uid="uid://dprog1tatd4e3" path="res://resources/grid/Grid.png" id="1_65pwv"]
+[ext_resource type="Texture2D" uid="uid://73j8fm2qgy6v" path="res://resources/grid/Grid.png" id="1_65pwv"]
 
 [node name="Grid" type="Node2D" unique_id=1965991597]
 
@@ -11,3 +11,11 @@ offset_bottom = 205.0
 [node name="Sprite" type="Sprite2D" parent="." unique_id=405065985]
 position = Vector2(145, 102.5)
 texture = ExtResource("1_65pwv")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1954670584]
+
+[node name="CombatManager" type="Node2D" parent="." unique_id=563833653]
+
+[node name="EnemyGroup" type="Node2D" parent="CombatManager" unique_id=663045605]
+
+[node name="PlayerGroup" type="Node2D" parent="CombatManager" unique_id=1135796001]

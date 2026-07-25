@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://12s7d25de3u2"]
 
-[ext_resource type="Script" uid="uid://cbxw0xf0vvf5u" path="res://script/health.gd" id="1_h5ing"]
+[ext_resource type="Script" uid="uid://cbxw0xf0vvf5u" path="res://scripts/health.gd" id="1_h5ing"]
 [ext_resource type="Texture2D" uid="uid://bqifjcajbcsv" path="res://assets/mecha_health/Sfondo.PNG" id="2_2gcyy"]
 [ext_resource type="Texture2D" uid="uid://bydmhx1cy7cdi" path="res://assets/mecha_health/Body.PNG" id="3_kqqqg"]
 [ext_resource type="Shader" uid="uid://clwbawao51d6j" path="res://shaders/health.gdshader" id="3_xx8d8"]
@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://ba1l4pwiwih46" path="res://assets/mecha_health/Right Arm.PNG" id="5_fkxoq"]
 [ext_resource type="Texture2D" uid="uid://cfmcy03i5m8qb" path="res://assets/mecha_health/LeftArm.PNG" id="6_ttvtc"]
 [ext_resource type="Texture2D" uid="uid://b31hjwqlski1w" path="res://assets/mecha_health/RightLeg.PNG" id="7_3i31q"]
-[ext_resource type="Texture2D" uid="uid://bwmmawmjrqv2x" path="res://assets/mecha_health/LeftLeg.PNG" id="8_jq64x"]
+[ext_resource type="Texture2D" uid="uid://c2wtkk044sase" path="res://assets/mecha_health/LeftLeg.PNG" id="8_jq64x"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xx8d8"]
 shader = ExtResource("3_xx8d8")
