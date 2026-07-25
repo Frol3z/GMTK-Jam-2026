@@ -52,6 +52,7 @@ resource_local_to_scene = true
 albedo_texture = SubResource("ViewportTexture_h4pee")
 emission_enabled = true
 emission_texture = SubResource("ViewportTexture_4gff3")
+texture_filter = 0
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_m5vvm"]
 viewport_path = NodePath("CooldownScreen/SubViewport")
@@ -110,6 +111,7 @@ emission_texture = SubResource("ViewportTexture_5xfqw")
 backlight = Color(1, 1, 1, 1)
 uv1_scale = Vector3(1.165, 1, 1)
 uv1_offset = Vector3(-0.1, 0, 0)
+texture_filter = 0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bjct7"]
 resource_name = "GreenPlastic"
@@ -155,6 +157,8 @@ grow_vertical = 2
 surface_material_override/0 = SubResource("StandardMaterial3D_0lu0o")
 
 [node name="SubViewport" type="SubViewport" parent="CockpitScreen" index="0" unique_id=8296361]
+scaling_3d_mode = 5
+canvas_item_default_texture_filter = 0
 size = Vector2i(290, 205)
 
 [node name="Grid" parent="CockpitScreen/SubViewport" index="0" unique_id=969030425 instance=ExtResource("2_mlplb")]
