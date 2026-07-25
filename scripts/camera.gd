@@ -20,7 +20,6 @@ var _yaw: float = 0.0
 var _initial_yaw: float = 0.0
 
 func _ready() -> void:
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
 	# Extract current starting rotations
 	_pitch = rotation.x
@@ -29,14 +28,6 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	# Toggle mouse capture with Escape key
-	if event.is_action_pressed("ui_cancel"):
-		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
-			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-		else:
-			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-			
-	if Input.mouse_mode != Input.MOUSE_MODE_CAPTURED:
-		return
 
 	if event is InputEventMouseMotion:
 		# Accumulate mouse motion delta

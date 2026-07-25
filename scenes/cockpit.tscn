@@ -7,7 +7,7 @@
 [ext_resource type="Shader" uid="uid://kq17q4kdke26" path="res://shaders/crt.gdshader" id="3_s8r4p"]
 [ext_resource type="PackedScene" uid="uid://bivevv8ex3kwj" path="res://scenes/screens/enemy_info.tscn" id="4_3b1jk"]
 [ext_resource type="PackedScene" uid="uid://baqxrppthr3wr" path="res://scenes/screens/cooldown.tscn" id="4_c1ege"]
-[ext_resource type="PackedScene" uid="uid://12s7d25de3u2" path="res://scenes/screens/health.tscn" id="7_bjct7"]
+[ext_resource type="PackedScene" uid="uid://ck7m38b268cmo" path="res://scenes/screens/gui_health_screen.tscn" id="7_bjct7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h4pee"]
 resource_name = "RedMetal"
@@ -134,10 +134,10 @@ emission_energy_multiplier = 4.34
 
 [node name="cockpit" unique_id=699117843 instance=ExtResource("1_mlplb")]
 
-[node name="Alarm" parent="." index="0" unique_id=809994605]
+[node name="Alarm" parent="." index="0" unique_id=2115265797]
 surface_material_override/1 = SubResource("StandardMaterial3D_h4pee")
 
-[node name="BatteryScreen" parent="." index="2" unique_id=71585927]
+[node name="BatteryScreen" parent="." index="2" unique_id=647256846]
 surface_material_override/0 = SubResource("StandardMaterial3D_edtdw")
 
 [node name="SubViewport" type="SubViewport" parent="BatteryScreen" index="0" unique_id=835379386]
@@ -152,8 +152,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
-[node name="CockpitScreen" parent="." index="10" unique_id=1563047588]
+[node name="CockpitScreen" parent="." index="10" unique_id=973768339]
 surface_material_override/0 = SubResource("StandardMaterial3D_0lu0o")
 
 [node name="SubViewport" type="SubViewport" parent="CockpitScreen" index="0" unique_id=8296361]
@@ -167,8 +168,9 @@ size = Vector2i(290, 205)
 material = SubResource("ShaderMaterial_mlplb")
 offset_right = 290.0
 offset_bottom = 205.0
+mouse_filter = 2
 
-[node name="CooldownScreen" parent="." index="12" unique_id=554436999]
+[node name="CooldownScreen" parent="." index="12" unique_id=1958895013]
 surface_material_override/0 = SubResource("StandardMaterial3D_6tcqw")
 
 [node name="SubViewport" type="SubViewport" parent="CooldownScreen" index="0" unique_id=510815259]
@@ -185,8 +187,11 @@ offset_right = -400.0
 offset_bottom = -900.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+
 
 [node name="EnemyScreen" parent="." index="14" unique_id=488899193]
+
 surface_material_override/0 = SubResource("StandardMaterial3D_iuvpg")
 
 [node name="SubViewport" type="SubViewport" parent="EnemyScreen" index="0" unique_id=201097783]
@@ -201,24 +206,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
-[node name="HealthScreen" parent="." index="16" unique_id=1998894401]
+[node name="GuiHealthScreen" parent="." index="16" unique_id=531636340 instance=ExtResource("7_bjct7")]
+
+[node name="HealthScreen" parent="." index="17" unique_id=1640150472]
+visible = false
 surface_material_override/0 = SubResource("StandardMaterial3D_oopws")
 
-[node name="SubViewport" type="SubViewport" parent="HealthScreen" index="0" unique_id=396931169]
-size = Vector2i(300, 400)
-
-[node name="Health" parent="HealthScreen/SubViewport" index="0" unique_id=1562592305 instance=ExtResource("7_bjct7")]
-
-[node name="ColorRect" type="ColorRect" parent="HealthScreen/SubViewport" index="1" unique_id=519559529]
-material = SubResource("ShaderMaterial_mlplb")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="LogScreen" parent="." index="18" unique_id=1008690735]
+[node name="LogScreen" parent="." index="19" unique_id=1865763633]
 surface_material_override/0 = SubResource("StandardMaterial3D_sxk48")
 
 [node name="SubViewport" type="SubViewport" parent="LogScreen" index="0" unique_id=97337978]
@@ -233,7 +229,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
-[node name="StatusPanel" parent="." index="24" unique_id=1917896217]
+[node name="StatusPanel" parent="." index="25" unique_id=1136767429]
 surface_material_override/1 = SubResource("StandardMaterial3D_bjct7")
 surface_material_override/2 = SubResource("StandardMaterial3D_iw1fk")

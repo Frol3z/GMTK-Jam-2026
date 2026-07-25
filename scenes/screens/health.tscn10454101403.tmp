@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://12s7d25de3u2"]
 
-[ext_resource type="Script" uid="uid://cbxw0xf0vvf5u" path="res://scripts/health.gd" id="1_h5ing"]
+[ext_resource type="Script" uid="uid://cbxw0xf0vvf5u" path="res://script/health.gd" id="1_h5ing"]
 [ext_resource type="Texture2D" uid="uid://bqifjcajbcsv" path="res://assets/mecha_health/Sfondo.PNG" id="2_2gcyy"]
 [ext_resource type="Texture2D" uid="uid://bydmhx1cy7cdi" path="res://assets/mecha_health/Body.PNG" id="3_kqqqg"]
 [ext_resource type="Shader" uid="uid://clwbawao51d6j" path="res://shaders/health.gdshader" id="3_xx8d8"]
@@ -14,43 +14,25 @@
 shader = ExtResource("3_xx8d8")
 shader_parameter/amount = 99.9999977648
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fkxoq"]
-size = Vector2(146, 110)
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fkxoq"]
 shader = ExtResource("3_xx8d8")
 shader_parameter/amount = 99.9999977648
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u22yr"]
-size = Vector2(106, 80)
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ttvtc"]
 shader = ExtResource("3_xx8d8")
-shader_parameter/amount = 99.9999977648
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xx8d8"]
-size = Vector2(57, 157)
+shader_parameter/amount = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3i31q"]
 shader = ExtResource("3_xx8d8")
-shader_parameter/amount = 99.9999977648
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ttvtc"]
-size = Vector2(60, 154)
+shader_parameter/amount = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jq64x"]
 shader = ExtResource("3_xx8d8")
-shader_parameter/amount = 99.9999977648
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3i31q"]
-size = Vector2(56, 141)
+shader_parameter/amount = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k03if"]
 shader = ExtResource("3_xx8d8")
-shader_parameter/amount = 99.9999977648
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jq64x"]
-size = Vector2(60, 138)
+shader_parameter/amount = 0.0
 
 [node name="Health" type="Node2D" unique_id=1965991597]
 script = ExtResource("1_h5ing")
@@ -64,63 +46,27 @@ material = SubResource("ShaderMaterial_xx8d8")
 position = Vector2(155, 200)
 texture = ExtResource("3_kqqqg")
 
-[node name="BodyCollision" type="Area2D" parent="Body" unique_id=252626222]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Body/BodyCollision" unique_id=265605817]
-position = Vector2(0, -16)
-shape = SubResource("RectangleShape2D_fkxoq")
-
 [node name="Head" type="Sprite2D" parent="." unique_id=1306151056]
 material = SubResource("ShaderMaterial_fkxoq")
 position = Vector2(155, 200)
 texture = ExtResource("4_xx8d8")
-
-[node name="HeadCollision" type="Area2D" parent="Head" unique_id=235013923]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Head/HeadCollision" unique_id=1168041618]
-position = Vector2(0, -119)
-shape = SubResource("RectangleShape2D_u22yr")
 
 [node name="RightArm" type="Sprite2D" parent="." unique_id=1151957664]
 material = SubResource("ShaderMaterial_ttvtc")
 position = Vector2(155, 200)
 texture = ExtResource("5_fkxoq")
 
-[node name="RightArmCollision" type="Area2D" parent="RightArm" unique_id=366837178]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RightArm/RightArmCollision" unique_id=91412405]
-position = Vector2(109.5, -9.5)
-shape = SubResource("RectangleShape2D_xx8d8")
-
 [node name="LeftArm" type="Sprite2D" parent="." unique_id=1228673720]
 material = SubResource("ShaderMaterial_3i31q")
 position = Vector2(155, 200)
 texture = ExtResource("6_ttvtc")
-
-[node name="LeftArmCollision" type="Area2D" parent="LeftArm" unique_id=1696142163]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftArm/LeftArmCollision" unique_id=2133719037]
-position = Vector2(-111, -8)
-shape = SubResource("RectangleShape2D_ttvtc")
 
 [node name="RightLeg" type="Sprite2D" parent="." unique_id=852705395]
 material = SubResource("ShaderMaterial_jq64x")
 position = Vector2(155, 200)
 texture = ExtResource("7_3i31q")
 
-[node name="RightLegCollision" type="Area2D" parent="RightLeg" unique_id=413365047]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RightLeg/RightLegCollision" unique_id=457652253]
-position = Vector2(47, 115.5)
-shape = SubResource("RectangleShape2D_3i31q")
-
 [node name="LeftLeg" type="Sprite2D" parent="." unique_id=114359702]
 material = SubResource("ShaderMaterial_k03if")
 position = Vector2(155, 200)
 texture = ExtResource("8_jq64x")
-
-[node name="LeftLegCollision" type="Area2D" parent="LeftLeg" unique_id=951406726]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftLeg/LeftLegCollision" unique_id=315150800]
-position = Vector2(-46, 117)
-shape = SubResource("RectangleShape2D_jq64x")

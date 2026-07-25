@@ -25,9 +25,6 @@ glow_bloom = 0.39
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.01
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_ptery"]
-viewport_path = NodePath("SubViewport")
-
 [node name="Main" type="Node3D" unique_id=590011488]
 script = ExtResource("1_ig7tw")
 
@@ -38,10 +35,11 @@ environment = SubResource("Environment_1bvp3")
 
 [node name="Camera" type="Camera3D" parent="." unique_id=1243448202]
 transform = Transform3D(1, 0, 0, 0, 0.99813485, 0.061048545, 0, -0.061048545, 0.99813485, 0, 0.011, 1.9393082)
+current = true
 fov = 43.4
 script = ExtResource("3_h2yge")
 sensitivity = 0.001
-min_pitch_deg = -10.0
+min_pitch_deg = -30.0
 max_pitch_deg = 5.0
 min_yaw_deg = -15.0
 max_yaw_deg = 15.0
@@ -67,7 +65,3 @@ shadow_enabled = true
 shadow_blur = 0.9
 area_range = 10.492
 area_attenuation = 1.792
-
-[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1324998823]
-transform = Transform3D(0.85665506, 0, 0, 0, 0.6092705, 0, 0, 0, 1, -0.013249934, -0.05724591, 0.01600337)
-texture = SubResource("ViewportTexture_ptery")

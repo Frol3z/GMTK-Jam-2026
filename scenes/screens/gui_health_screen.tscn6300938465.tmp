@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://ck7m38b268cmo"]
+
+[ext_resource type="PackedScene" uid="uid://12s7d25de3u2" path="res://scenes/screens/health.tscn" id="1_16gq8"]
+[ext_resource type="Script" uid="uid://xr7magjnrkkb" path="res://scenes/screens/gui_health_screen.gd" id="1_ytwmk"]
+[ext_resource type="Shader" uid="uid://kq17q4kdke26" path="res://shaders/crt.gdshader" id="2_ytwmk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a3r02"]
+shader = ExtResource("2_ytwmk")
+shader_parameter/mask_type = 1
+shader_parameter/curve = 0.0
+shader_parameter/color_offset = 0.0
+shader_parameter/mask_brightness = 1.0
+shader_parameter/aspect = 0.75
+
+[sub_resource type="QuadMesh" id="QuadMesh_a3r02"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_vxdfi"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_i6vmn"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k5boo"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_vxdfi")
+emission_enabled = true
+emission_texture = SubResource("ViewportTexture_i6vmn")
+uv1_scale = Vector3(1.025, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c520o"]
+size = Vector3(0.2217992, 0.025390625, 0.2638691)
+
+[node name="GuiHealthScreen" type="Node3D" unique_id=531636340]
+script = ExtResource("1_ytwmk")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=1153143820]
+gui_embed_subwindows = true
+size = Vector2i(300, 400)
+
+[node name="Health" parent="SubViewport" unique_id=1965991597 instance=ExtResource("1_16gq8")]
+
+[node name="ColorRect" type="ColorRect" parent="SubViewport" unique_id=2113794108]
+material = SubResource("ShaderMaterial_a3r02")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="HealthScreen" type="MeshInstance3D" parent="." unique_id=213888299]
+transform = Transform3D(0.2159386, 0, 0, 0, 0.23301424, 1.0149379, 0, -0.12120363, 1.9512204, 4.711747e-05, -0.826615, 0.14837179)
+mesh = SubResource("QuadMesh_a3r02")
+surface_material_override/0 = SubResource("StandardMaterial3D_k5boo")
+
+[node name="Area3D" type="Area3D" parent="HealthScreen" unique_id=1832164987]
+transform = Transform3D(4.630946, 0, 0, 0, 3.3777056, -1.7569319, 0, 0.20981237, 0.40336475, -0.00021819847, 1.4494253, 0.4816829)
+collision_layer = 2
+input_capture_on_drag = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HealthScreen/Area3D" unique_id=518208702]
+transform = Transform3D(1, 0, 0, 0, 0.4568556, -0.889541, 0, 0.889541, 0.4568556, 0.00041679665, -0.82334447, -0.76437175)
+shape = SubResource("BoxShape3D_c520o")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1169885671]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.54761606, 1.2494402)
+current = true
