@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dllcu2yrkhiaf"]
+
+[ext_resource type="Script" uid="uid://cdiew87mwlh7c" path="res://scripts/player.gd" id="1_ucweq"]
+
+[node name="Player" type="Node2D" unique_id=579347728]
+script = ExtResource("1_ucweq")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1815279919]

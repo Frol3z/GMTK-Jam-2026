@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ddqb5y2gufesv"]
 
-[ext_resource type="PackedScene" uid="uid://b62fah02s1yx" path="res://assets/cockpit.glb" id="1_mlplb"]
+[ext_resource type="PackedScene" uid="uid://cq87gt4fnt3qk" path="res://assets/cockpit.glb" id="1_mlplb"]
 [ext_resource type="PackedScene" uid="uid://dhf84gl2cbv0l" path="res://scenes/screens/grid.tscn" id="2_mlplb"]
 [ext_resource type="PackedScene" uid="uid://1qb7yoegl480" path="res://scenes/screens/terminal.tscn" id="2_s8r4p"]
 [ext_resource type="PackedScene" uid="uid://bgbxewq6dvb5n" path="res://scenes/screens/energy.tscn" id="2_shtuo"]
@@ -33,13 +33,29 @@ emission_texture = SubResource("ViewportTexture_iw1fk")
 uv1_scale = Vector3(1.225, 1, 1)
 uv1_offset = Vector3(-0.085, 0, 0)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_mlplb"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_edtdw"]
 shader = ExtResource("3_s8r4p")
-shader_parameter/mask_type = 1
-shader_parameter/curve = 0.0
-shader_parameter/color_offset = 0.0
-shader_parameter/mask_brightness = 1.0
-shader_parameter/aspect = 0.75
+shader_parameter/overlay = false
+shader_parameter/resolution = Vector2(400, 900)
+shader_parameter/brightness = 1.22
+shader_parameter/scanlines_opacity = 0.0330000015675
+shader_parameter/scanlines_width = 0.066000003135
+shader_parameter/grille_opacity = 0.0110000005225
+shader_parameter/roll = true
+shader_parameter/roll_speed = 1.655
+shader_parameter/roll_size = 6.2090002949275
+shader_parameter/roll_variation = 2.55400011805512
+shader_parameter/distort_intensity = 0.0230000010925
+shader_parameter/aberration = 0.04400004958999992
+shader_parameter/noise_opacity = 0.1470000069825
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.0550000026125
+shader_parameter/pixelate = true
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.1650000078375
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.40400001919
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_h4pee"]
 viewport_path = NodePath("CockpitScreen/SubViewport")
@@ -53,6 +69,30 @@ albedo_texture = SubResource("ViewportTexture_h4pee")
 emission_enabled = true
 emission_texture = SubResource("ViewportTexture_4gff3")
 texture_filter = 0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bjct7"]
+shader = ExtResource("3_s8r4p")
+shader_parameter/overlay = false
+shader_parameter/resolution = Vector2(290, 205)
+shader_parameter/brightness = 0.97
+shader_parameter/scanlines_opacity = 0.08800000418
+shader_parameter/scanlines_width = 0.0690000032775
+shader_parameter/grille_opacity = 0.0
+shader_parameter/roll = false
+shader_parameter/roll_speed = 2.885
+shader_parameter/roll_size = 15.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.0310000014725
+shader_parameter/aberration = 4.7499999933364734e-08
+shader_parameter/noise_opacity = 0.070000003325
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.0550000026125
+shader_parameter/pixelate = false
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.1650000078375
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.4890000232275
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_m5vvm"]
 viewport_path = NodePath("CooldownScreen/SubViewport")
@@ -68,6 +108,30 @@ emission_texture = SubResource("ViewportTexture_7nj66")
 uv1_scale = Vector3(3.265, 1, 1)
 uv1_offset = Vector3(0.02, 0, 0)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iw1fk"]
+shader = ExtResource("3_s8r4p")
+shader_parameter/overlay = false
+shader_parameter/resolution = Vector2(400, 900)
+shader_parameter/brightness = 1.22
+shader_parameter/scanlines_opacity = 0.0330000015675
+shader_parameter/scanlines_width = 0.066000003135
+shader_parameter/grille_opacity = 0.0110000005225
+shader_parameter/roll = true
+shader_parameter/roll_speed = 1.655
+shader_parameter/roll_size = 6.2090002949275
+shader_parameter/roll_variation = 2.55400011805512
+shader_parameter/distort_intensity = 0.0230000010925
+shader_parameter/aberration = 0.04400004958999992
+shader_parameter/noise_opacity = 0.1470000069825
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.0550000026125
+shader_parameter/pixelate = true
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.1650000078375
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.40400001919
+
 [sub_resource type="ViewportTexture" id="ViewportTexture_0g4l1"]
 viewport_path = NodePath("EnemyScreen/SubViewport")
 
@@ -81,6 +145,30 @@ emission_enabled = true
 emission_texture = SubResource("ViewportTexture_ifc1d")
 uv1_scale = Vector3(1.55, 1, 1)
 uv1_offset = Vector3(-0.265, 0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h4pee"]
+shader = ExtResource("3_s8r4p")
+shader_parameter/overlay = false
+shader_parameter/resolution = Vector2(400, 900)
+shader_parameter/brightness = 1.22
+shader_parameter/scanlines_opacity = 0.0330000015675
+shader_parameter/scanlines_width = 0.066000003135
+shader_parameter/grille_opacity = 0.0110000005225
+shader_parameter/roll = true
+shader_parameter/roll_speed = 1.655
+shader_parameter/roll_size = 6.2090002949275
+shader_parameter/roll_variation = 2.55400011805512
+shader_parameter/distort_intensity = 0.0230000010925
+shader_parameter/aberration = 0.04400004958999992
+shader_parameter/noise_opacity = 0.1470000069825
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.0550000026125
+shader_parameter/pixelate = true
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.1650000078375
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.40400001919
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_n6o77"]
 viewport_path = NodePath("HealthScreen/SubViewport")
@@ -113,6 +201,30 @@ uv1_scale = Vector3(1.165, 1, 1)
 uv1_offset = Vector3(-0.1, 0, 0)
 texture_filter = 0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4gff3"]
+shader = ExtResource("3_s8r4p")
+shader_parameter/overlay = false
+shader_parameter/resolution = Vector2(400, 900)
+shader_parameter/brightness = 1.22
+shader_parameter/scanlines_opacity = 0.0330000015675
+shader_parameter/scanlines_width = 0.066000003135
+shader_parameter/grille_opacity = 0.0110000005225
+shader_parameter/roll = true
+shader_parameter/roll_speed = 1.655
+shader_parameter/roll_size = 6.2090002949275
+shader_parameter/roll_variation = 2.55400011805512
+shader_parameter/distort_intensity = 0.0230000010925
+shader_parameter/aberration = 0.04400004958999992
+shader_parameter/noise_opacity = 0.1470000069825
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.0550000026125
+shader_parameter/pixelate = true
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.1650000078375
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.40400001919
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bjct7"]
 resource_name = "GreenPlastic"
 cull_mode = 2
@@ -134,10 +246,10 @@ emission_energy_multiplier = 4.34
 
 [node name="cockpit" unique_id=699117843 instance=ExtResource("1_mlplb")]
 
-[node name="Alarm" parent="." index="0" unique_id=2115265797]
+[node name="Alarm" parent="." index="0" unique_id=319437574]
 surface_material_override/1 = SubResource("StandardMaterial3D_h4pee")
 
-[node name="BatteryScreen" parent="." index="2" unique_id=647256846]
+[node name="BatteryScreen" parent="." index="2" unique_id=45063497]
 surface_material_override/0 = SubResource("StandardMaterial3D_edtdw")
 
 [node name="SubViewport" type="SubViewport" parent="BatteryScreen" index="0" unique_id=835379386]
@@ -146,7 +258,7 @@ size = Vector2i(500, 400)
 [node name="Energy" parent="BatteryScreen/SubViewport" index="0" unique_id=1965991597 instance=ExtResource("2_shtuo")]
 
 [node name="ColorRect" type="ColorRect" parent="BatteryScreen/SubViewport" index="1" unique_id=1685923001]
-material = SubResource("ShaderMaterial_mlplb")
+material = SubResource("ShaderMaterial_edtdw")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -154,7 +266,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="CockpitScreen" parent="." index="10" unique_id=973768339]
+[node name="CockpitScreen" parent="." index="10" unique_id=372231722]
 surface_material_override/0 = SubResource("StandardMaterial3D_0lu0o")
 
 [node name="SubViewport" type="SubViewport" parent="CockpitScreen" index="0" unique_id=8296361]
@@ -165,12 +277,12 @@ size = Vector2i(290, 205)
 [node name="Grid" parent="CockpitScreen/SubViewport" index="0" unique_id=969030425 instance=ExtResource("2_mlplb")]
 
 [node name="ColorRect" type="ColorRect" parent="CockpitScreen/SubViewport" index="1" unique_id=1787595737]
-material = SubResource("ShaderMaterial_mlplb")
+material = SubResource("ShaderMaterial_bjct7")
 offset_right = 290.0
 offset_bottom = 205.0
 mouse_filter = 2
 
-[node name="CooldownScreen" parent="." index="12" unique_id=1958895013]
+[node name="CooldownScreen" parent="." index="12" unique_id=1004025114]
 surface_material_override/0 = SubResource("StandardMaterial3D_6tcqw")
 
 [node name="SubViewport" type="SubViewport" parent="CooldownScreen" index="0" unique_id=510815259]
@@ -179,28 +291,24 @@ size = Vector2i(400, 900)
 [node name="Cooldown" parent="CooldownScreen/SubViewport" index="0" unique_id=1023691348 instance=ExtResource("4_c1ege")]
 
 [node name="ColorRect" type="ColorRect" parent="CooldownScreen/SubViewport" index="1" unique_id=514671250]
-material = SubResource("ShaderMaterial_mlplb")
+material = SubResource("ShaderMaterial_iw1fk")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -400.0
-offset_bottom = -900.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-
-[node name="EnemyScreen" parent="." index="14" unique_id=488899193]
-
+[node name="EnemyScreen" parent="." index="14" unique_id=205011034]
 surface_material_override/0 = SubResource("StandardMaterial3D_iuvpg")
 
 [node name="SubViewport" type="SubViewport" parent="EnemyScreen" index="0" unique_id=201097783]
 size = Vector2i(200, 200)
 
-[node name="EnemyInfo" parent="EnemyScreen/SubViewport" index="0" unique_id=2077214754 instance=ExtResource("4_3b1jk")]
+[node name="Terminal" parent="EnemyScreen/SubViewport" index="0" unique_id=234687491 instance=ExtResource("2_s8r4p")]
 
 [node name="ColorRect" type="ColorRect" parent="EnemyScreen/SubViewport" index="1" unique_id=37734087]
-material = SubResource("ShaderMaterial_mlplb")
+material = SubResource("ShaderMaterial_h4pee")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -210,20 +318,20 @@ mouse_filter = 2
 
 [node name="GuiHealthScreen" parent="." index="16" unique_id=531636340 instance=ExtResource("7_bjct7")]
 
-[node name="HealthScreen" parent="." index="17" unique_id=1640150472]
+[node name="HealthScreen" parent="." index="17" unique_id=1516494536]
 visible = false
 surface_material_override/0 = SubResource("StandardMaterial3D_oopws")
 
-[node name="LogScreen" parent="." index="19" unique_id=1865763633]
+[node name="LogScreen" parent="." index="19" unique_id=1293094236]
 surface_material_override/0 = SubResource("StandardMaterial3D_sxk48")
 
 [node name="SubViewport" type="SubViewport" parent="LogScreen" index="0" unique_id=97337978]
 size = Vector2i(600, 500)
 
-[node name="Terminal" parent="LogScreen/SubViewport" index="0" unique_id=234687491 instance=ExtResource("2_s8r4p")]
+[node name="EnemyInfo" parent="LogScreen/SubViewport" index="0" unique_id=2077214754 instance=ExtResource("4_3b1jk")]
 
 [node name="ColorRect" type="ColorRect" parent="LogScreen/SubViewport" index="1" unique_id=521883127]
-material = SubResource("ShaderMaterial_mlplb")
+material = SubResource("ShaderMaterial_4gff3")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -231,6 +339,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="StatusPanel" parent="." index="25" unique_id=1136767429]
+[node name="StatusPanel" parent="." index="25" unique_id=593066322]
 surface_material_override/1 = SubResource("StandardMaterial3D_bjct7")
 surface_material_override/2 = SubResource("StandardMaterial3D_iw1fk")

@@ -1,14 +1,27 @@
 [gd_scene format=3 uid="uid://bivevv8ex3kwj"]
 
-[ext_resource type="Texture2D" uid="uid://df7isybyfgc17" path="res://assets/cockpit_bocchi-the-rock@2000x1270.jpg" id="1_p8dt1"]
+[ext_resource type="Texture2D" uid="uid://kx0f4ts031vm" path="res://resources/enemies/boomer/art/Boomer.png" id="1_p8dt1"]
 
 [node name="EnemyInfo" type="Node2D" unique_id=1965991597]
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=349258008]
-offset_right = 200.0
-offset_bottom = 200.0
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=549191737]
+custom_minimum_size = Vector2(600, 500)
+offset_right = 91.0
+offset_bottom = 80.0
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
 
-[node name="Sprite" type="Sprite2D" parent="." unique_id=405065985]
-position = Vector2(99.9055, 99.99999)
-scale = Vector2(0.1000945, 0.15748031)
+[node name="ColorRect" type="ColorRect" parent="MarginContainer" unique_id=349258008]
+layout_mode = 2
+color = Color(0.1326, 0.26, 0.14958666, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=975106112]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer" unique_id=1659370015]
+layout_mode = 2
 texture = ExtResource("1_p8dt1")
+expand_mode = 4
+stretch_mode = 6

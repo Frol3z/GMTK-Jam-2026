@@ -38,11 +38,13 @@ transform = Transform3D(1, 0, 0, 0, 0.99813485, 0.061048545, 0, -0.061048545, 0.
 current = true
 fov = 43.4
 script = ExtResource("3_h2yge")
-sensitivity = 0.001
-min_pitch_deg = -30.0
-max_pitch_deg = 5.0
-min_yaw_deg = -15.0
-max_yaw_deg = 15.0
+deadzone_radius = 0.5
+max_turn_speed = 0.5
+acceleration = 10.0
+max_pitch_up = 10.0
+max_pitch_down = 15.0
+max_yaw_left = 15.0
+max_yaw_right = 15.0
 
 [node name="AreaLight3D" type="AreaLight3D" parent="." unique_id=1855699189]
 transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0.041510582, 0.043700695)

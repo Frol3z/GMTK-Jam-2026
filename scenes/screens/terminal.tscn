@@ -5,10 +5,10 @@
 [node name="Terminal" type="Node2D" unique_id=1965991597]
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=349258008]
-offset_right = 600.0
-offset_bottom = 500.0
+offset_right = 200.0
+offset_bottom = 200.0
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=405065985]
-position = Vector2(299.22046, 250.37502)
-scale = Vector2(0.29940942, 0.39311025)
+position = Vector2(99.905525, 100.375)
+scale = Vector2(0.10009449, 0.15688978)
 texture = ExtResource("1_f8q7y")
