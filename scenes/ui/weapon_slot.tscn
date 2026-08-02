@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://dhdnioojhulq4"]
+
+[ext_resource type="Script" uid="uid://d1w04c3bekyom" path="res://scripts/weapon_slot.gd" id="1_a3sf7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ukhvp"]
+bg_color = Color(0.69803923, 0.7607843, 0.49019608, 1)
+draw_center = false
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.69803923, 0.7607843, 0.49019608, 1)
+expand_margin_left = 8.0
+expand_margin_top = 8.0
+expand_margin_right = 8.0
+expand_margin_bottom = 8.0
+
+[node name="WeaponSlot" type="Control" unique_id=1505185980]
+custom_minimum_size = Vector2(160, 50)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 180.0
+offset_bottom = 50.0
+script = ExtResource("1_a3sf7")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1497914660]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Panel" type="Panel" parent="TextureRect" unique_id=1730098748]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ukhvp")

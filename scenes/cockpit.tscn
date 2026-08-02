@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://ddqb5y2gufesv"]
 
-[ext_resource type="PackedScene" uid="uid://cq87gt4fnt3qk" path="res://assets/cockpit.glb" id="1_mlplb"]
+[ext_resource type="PackedScene" uid="uid://b62fah02s1yx" path="res://assets/cockpit.glb" id="1_mlplb"]
 [ext_resource type="PackedScene" uid="uid://dhf84gl2cbv0l" path="res://scenes/screens/grid.tscn" id="2_mlplb"]
 [ext_resource type="PackedScene" uid="uid://1qb7yoegl480" path="res://scenes/screens/terminal.tscn" id="2_s8r4p"]
 [ext_resource type="PackedScene" uid="uid://bgbxewq6dvb5n" path="res://scenes/screens/energy.tscn" id="2_shtuo"]
 [ext_resource type="Shader" uid="uid://kq17q4kdke26" path="res://shaders/crt.gdshader" id="3_s8r4p"]
 [ext_resource type="PackedScene" uid="uid://bivevv8ex3kwj" path="res://scenes/screens/enemy_info.tscn" id="4_3b1jk"]
 [ext_resource type="PackedScene" uid="uid://baqxrppthr3wr" path="res://scenes/screens/cooldown.tscn" id="4_c1ege"]
+[ext_resource type="Script" uid="uid://x4lpfm6m1hl6" path="res://scripts/weapons_cooldown.gd" id="6_iw1fk"]
 [ext_resource type="PackedScene" uid="uid://ck7m38b268cmo" path="res://scenes/screens/gui_health_screen.tscn" id="7_bjct7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h4pee"]
@@ -19,17 +20,17 @@ emission_enabled = true
 emission = Color(0.90588236, 0, 0, 1)
 emission_energy_multiplier = 9.44
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_bjct7"]
-viewport_path = NodePath("BatteryScreen/SubViewport")
-
 [sub_resource type="ViewportTexture" id="ViewportTexture_iw1fk"]
 viewport_path = NodePath("BatteryScreen/SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_edtdw"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_edtdw"]
+viewport_path = NodePath("BatteryScreen/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4gff3"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_bjct7")
+albedo_texture = SubResource("ViewportTexture_iw1fk")
 emission_enabled = true
-emission_texture = SubResource("ViewportTexture_iw1fk")
+emission_texture = SubResource("ViewportTexture_edtdw")
 uv1_scale = Vector3(1.225, 1, 1)
 uv1_offset = Vector3(-0.085, 0, 0)
 
@@ -57,17 +58,17 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.40400001919
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_h4pee"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_0lu0o"]
 viewport_path = NodePath("CockpitScreen/SubViewport")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_4gff3"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_m5vvm"]
 viewport_path = NodePath("CockpitScreen/SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0lu0o"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7nj66"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_h4pee")
+albedo_texture = SubResource("ViewportTexture_0lu0o")
 emission_enabled = true
-emission_texture = SubResource("ViewportTexture_4gff3")
+emission_texture = SubResource("ViewportTexture_m5vvm")
 texture_filter = 0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bjct7"]
@@ -94,19 +95,22 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.4890000232275
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_m5vvm"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_6tcqw"]
 viewport_path = NodePath("CooldownScreen/SubViewport")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_7nj66"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_0g4l1"]
 viewport_path = NodePath("CooldownScreen/SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6tcqw"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ifc1d"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_m5vvm")
+albedo_texture = SubResource("ViewportTexture_6tcqw")
 emission_enabled = true
-emission_texture = SubResource("ViewportTexture_7nj66")
+emission_texture = SubResource("ViewportTexture_0g4l1")
 uv1_scale = Vector3(3.265, 1, 1)
 uv1_offset = Vector3(0.02, 0, 0)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_iuvpg"]
+data = PackedVector3Array(1.3847, 0.20789999, 0.4378, 0.8842, -0.8871, 0.1524, 0.9299, 0.22369999, 0.1414, 1.3847, 0.20789999, 0.4378, 1.339, -0.9029, 0.4488, 0.8842, -0.8871, 0.1524)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_iw1fk"]
 shader = ExtResource("3_s8r4p")
@@ -132,17 +136,17 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.40400001919
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_0g4l1"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_iuvpg"]
 viewport_path = NodePath("EnemyScreen/SubViewport")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_ifc1d"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_n6o77"]
 viewport_path = NodePath("EnemyScreen/SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iuvpg"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rmof7"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_0g4l1")
+albedo_texture = SubResource("ViewportTexture_iuvpg")
 emission_enabled = true
-emission_texture = SubResource("ViewportTexture_ifc1d")
+emission_texture = SubResource("ViewportTexture_n6o77")
 uv1_scale = Vector3(1.55, 1, 1)
 uv1_offset = Vector3(-0.265, 0, 0)
 
@@ -170,32 +174,32 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.40400001919
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_n6o77"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_oopws"]
 viewport_path = NodePath("HealthScreen/SubViewport")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_rmof7"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_vsd1e"]
 viewport_path = NodePath("HealthScreen/SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oopws"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5xfqw"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_n6o77")
+albedo_texture = SubResource("ViewportTexture_oopws")
 emission_enabled = true
-emission_texture = SubResource("ViewportTexture_rmof7")
+emission_texture = SubResource("ViewportTexture_vsd1e")
 uv1_scale = Vector3(1.91, 1, 1)
 uv1_offset = Vector3(-0.42, 0, 0)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_vsd1e"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_sxk48"]
 viewport_path = NodePath("LogScreen/SubViewport")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_5xfqw"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_l487c"]
 viewport_path = NodePath("LogScreen/SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sxk48"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hllv1"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_vsd1e")
+albedo_texture = SubResource("ViewportTexture_sxk48")
 metallic_specular = 0.0
 emission_enabled = true
-emission_texture = SubResource("ViewportTexture_5xfqw")
+emission_texture = SubResource("ViewportTexture_l487c")
 backlight = Color(1, 1, 1, 1)
 uv1_scale = Vector3(1.165, 1, 1)
 uv1_offset = Vector3(-0.1, 0, 0)
@@ -246,11 +250,11 @@ emission_energy_multiplier = 4.34
 
 [node name="cockpit" unique_id=699117843 instance=ExtResource("1_mlplb")]
 
-[node name="Alarm" parent="." index="0" unique_id=319437574]
+[node name="Alarm" parent="." index="0" unique_id=809994605]
 surface_material_override/1 = SubResource("StandardMaterial3D_h4pee")
 
-[node name="BatteryScreen" parent="." index="2" unique_id=45063497]
-surface_material_override/0 = SubResource("StandardMaterial3D_edtdw")
+[node name="BatteryScreen" parent="." index="2" unique_id=71585927]
+surface_material_override/0 = SubResource("StandardMaterial3D_4gff3")
 
 [node name="SubViewport" type="SubViewport" parent="BatteryScreen" index="0" unique_id=835379386]
 size = Vector2i(500, 400)
@@ -266,8 +270,8 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="CockpitScreen" parent="." index="10" unique_id=372231722]
-surface_material_override/0 = SubResource("StandardMaterial3D_0lu0o")
+[node name="CockpitScreen" parent="." index="10" unique_id=1563047588]
+surface_material_override/0 = SubResource("StandardMaterial3D_7nj66")
 
 [node name="SubViewport" type="SubViewport" parent="CockpitScreen" index="0" unique_id=8296361]
 scaling_3d_mode = 5
@@ -282,15 +286,23 @@ offset_right = 290.0
 offset_bottom = 205.0
 mouse_filter = 2
 
-[node name="CooldownScreen" parent="." index="12" unique_id=1004025114]
-surface_material_override/0 = SubResource("StandardMaterial3D_6tcqw")
+[node name="CooldownScreen" parent="." index="12" unique_id=554436999]
+surface_material_override/0 = SubResource("StandardMaterial3D_ifc1d")
 
-[node name="SubViewport" type="SubViewport" parent="CooldownScreen" index="0" unique_id=510815259]
+[node name="StaticBody3D" type="StaticBody3D" parent="CooldownScreen" index="0" unique_id=39971534 node_paths=PackedStringArray("sub_viewport", "mesh_instance")]
+script = ExtResource("6_iw1fk")
+sub_viewport = NodePath("../SubViewport")
+mesh_instance = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CooldownScreen/StaticBody3D" index="0" unique_id=659706655]
+shape = SubResource("ConcavePolygonShape3D_iuvpg")
+
+[node name="SubViewport" type="SubViewport" parent="CooldownScreen" index="1" unique_id=510815259]
 size = Vector2i(400, 900)
 
 [node name="Cooldown" parent="CooldownScreen/SubViewport" index="0" unique_id=1023691348 instance=ExtResource("4_c1ege")]
 
-[node name="ColorRect" type="ColorRect" parent="CooldownScreen/SubViewport" index="1" unique_id=514671250]
+[node name="ColorRect2" type="ColorRect" parent="CooldownScreen/SubViewport" index="1" unique_id=514671250]
 material = SubResource("ShaderMaterial_iw1fk")
 anchors_preset = 15
 anchor_right = 1.0
@@ -299,8 +311,8 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="EnemyScreen" parent="." index="14" unique_id=205011034]
-surface_material_override/0 = SubResource("StandardMaterial3D_iuvpg")
+[node name="EnemyScreen" parent="." index="14" unique_id=488899193]
+surface_material_override/0 = SubResource("StandardMaterial3D_rmof7")
 
 [node name="SubViewport" type="SubViewport" parent="EnemyScreen" index="0" unique_id=201097783]
 size = Vector2i(200, 200)
@@ -318,12 +330,12 @@ mouse_filter = 2
 
 [node name="GuiHealthScreen" parent="." index="16" unique_id=531636340 instance=ExtResource("7_bjct7")]
 
-[node name="HealthScreen" parent="." index="17" unique_id=1516494536]
+[node name="HealthScreen" parent="." index="17" unique_id=1998894401]
 visible = false
-surface_material_override/0 = SubResource("StandardMaterial3D_oopws")
+surface_material_override/0 = SubResource("StandardMaterial3D_5xfqw")
 
-[node name="LogScreen" parent="." index="19" unique_id=1293094236]
-surface_material_override/0 = SubResource("StandardMaterial3D_sxk48")
+[node name="LogScreen" parent="." index="19" unique_id=1008690735]
+surface_material_override/0 = SubResource("StandardMaterial3D_hllv1")
 
 [node name="SubViewport" type="SubViewport" parent="LogScreen" index="0" unique_id=97337978]
 size = Vector2i(600, 500)
@@ -339,6 +351,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="StatusPanel" parent="." index="25" unique_id=593066322]
+[node name="StatusPanel" parent="." index="25" unique_id=1917896217]
 surface_material_override/1 = SubResource("StandardMaterial3D_bjct7")
 surface_material_override/2 = SubResource("StandardMaterial3D_iw1fk")
